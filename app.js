@@ -23,6 +23,9 @@ app.get('/api/health', (req, res) => {
     res.status(200).json({status: "API is running"})
 })
 
+const authRoutes = require('./modules/auth/auth.routes');
+app.use('/api/v1/auth', authRoutes);
+
 
 app.use(errorHandler);
 
